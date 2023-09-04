@@ -1,3 +1,8 @@
+"""
+LICENSE LGPL <http://www.gnu.org/licenses/lgpl.html>
+        (c) Nedim Jackman 2008 (c) Pierrick Koch 2016 (c) Janek Bober 2023
+"""
+
 import time
 import logging
 import collections
@@ -68,8 +73,6 @@ def discover(duration=10, prefix=BLUETOOTH_NAME):
     devices = bluetooth.discover_devices(duration=duration, lookup_names=True)
     logger.debug("Found devices: %s", str(devices))
     return [address for address, name in devices if name.startswith(prefix)]
-#address = '00:24:44:58:C9:AF'
-
 
 
 
@@ -237,7 +240,6 @@ class Wiiboard:
         #logger.debug("Entered on_calibrated method")
         logger.info("Board calibrated: %s", str(self.calibration))
         print("\n \n MEASUREMENT IN PROGRESS")
-        print("\n \n PLEASE STAND ON THE BOARD FOR FIRST TRIAL (CALIBRATION)")
         self.light(1)
     
     #Doesnt enter on_mass method???????
